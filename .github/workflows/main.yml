@@ -9,7 +9,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - uses: kennylouie/setup-ops@v1
+    - uses: kennylouie/setup-ops@v0.1.0
     - name: tests
       run: |
         echo "Running tests..."

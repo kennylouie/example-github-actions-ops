@@ -15,7 +15,7 @@ jobs:
     - name: setup-ops
       run: |
         npm install -g @cto.ai/ops
-        ops account:login -u ${{ secrets.OPS_USER_NAME }} -p ${{ secrets.OPS_USER_PW }}
+        ops account:signin -u ${{ secrets.OPS_USER_NAME }} -p ${{ secrets.OPS_USER_PW }}
     - name: tests
       run: |
         make tests

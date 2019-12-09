@@ -9,9 +9,15 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - uses: kennylouie/setup-ops@v0.1.0
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+    - name: setup-ops
+      run: |
+        npm install -g @cto.ai/ops
+        ops account:login -u ${{ secrets.OPS_USER_NAME }} -p ${{ secrets.OPS_USER_PW }}
     - name: tests
       run: |
-        echo "Running tests..."
-        make test
-        echo "Done!"
+        make tests
+        ops run @kl/maketests:0.1.0
+

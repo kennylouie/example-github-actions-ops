@@ -1,2 +1,2 @@
-# example-github-actions-ops
-An example of using ops as CICD leveraging github actions
+# example-make-repo
+An example repo to run make test
